@@ -18,13 +18,13 @@ var state = {
 
 state.current=state.questions[0];
 // function that change your object (modify)
-function genAnswerMarkUp(answer){
-	var markUp='<button type="radio"></button> '+answer+'<br>';
+function genAnswerMarkUp(answer, id){
+	var markUp='<input type="checkbox" data-id="'+ id +'"></input> '+answer+'<br>';
 	return markUp;
 }
 var answersMarkUp='';
-state.current.answers.forEach(function(answer){
-	var current= genAnswerMarkUp(answer);
+state.current.answers.forEach(function(answer, i){
+	var current= genAnswerMarkUp(answer, i);
 	answersMarkUp+= current;
 });
 
@@ -45,13 +45,31 @@ $('#js-answers').html(answersMarkUp);
 // event listeners
 	//when start button is submitted
 	$('.js-start').on('click', function(event) {
+		event.preventDefault();
 		//hide start page and show question page
 		$('.js-start-page').hide();
 		$('.js-question-page').show();
 	});
 	   //call function to handle questions
 	//current answer is submitted
-	$('.answer').submit(function(event){});
+	$('.js-questions').submit(function(event){
+		event.preventDefault();
+
+		var answer = $('input[type=checkbox]:checked')[0].getAttribute("data-id");
+		var answerNumber = Number.parseInt(answer);
+		// if more than 1 checked or none checked alert('Error')
+		if (answerNumber===2) {
+			alert('Correct!');
+			//go to next question
+			// $('#js-question-header').html(state.current.question);
+			// $('#js-answers').html(answersMarkUp);
+		}
+		else {
+			alert('Wrong!');
+			//go to next question
+
+		}
+	});
 	//next question
 	$('.next').click(function(event){});
 	//restart button is clicked
