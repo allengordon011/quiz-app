@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="main.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<title>
+	<head>
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<title>
 		Marvel Comics Quiz App
-	</title>
-</head>
-<body>
-<div class="container">
-	<div class="js-start-page">
-		<h1>Quiz App</h1>
-		<p>This quiz app tests your knowledge in Marvel Comics lore. Do you know the name of Thor's hammer? Which hero is sleeping with who? </p>
-		<p>Good luck, friend!</p>
-		<button class="js-start">start</button>
-	</div>
-	<div class="js-question-page">
-		<form method="get" class="js-questions">
-		<h1 id="js-question-header"></h1>
-		<div id="js-answers"></div>
-		<input type="submit" class="js-submit"></input>
-		<button class="js-restart">restart</button>
-		</form>
-		<footer>0 correct, 0 incorrect</footer>
-
-	</div>
-	<div class="js-results-page">
-		<header>Your Results </header>
-		<p>Your score is: </p>
-		<button class="js-restart"></button>
-	</div>
-</div>
-
+		</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="js-start-page">
+				<h1>Marvel Comics Quiz</h1>
+				<p>This quiz app tests your knowledge in Marvel Comics lore. Do you know the name of Thor's hammer? Which hero is sleeping with who? </p>
+				<p>Good luck, friend!</p>
+				<button class="js-start">Start</button>
+			</div>
+			<div class="js-question-page">
+				<form method="get" class="js-questions">
+					<h1 id="js-question-header"></h1>
+					<div id="js-answers"></div>
+					<input type="submit" class="js-submit"></input>
+					<button class="js-restart">Restart</button>
+				</form>
+			<footer></footer>
+		</div>
+			<div class="js-results-page">
+			<header>Your Results </header>
+			<p>Your score is: </p>
+			<button class="js-restart"></button>
+			</div>
+		</div>
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script type="text/javascript" src="quizApp.js"></script>
 </body>
